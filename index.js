@@ -15,8 +15,9 @@ mongoose.connect(mongoURI)
 app.get('/get-csv', (req, res) => {
     res.download('./output.csv');
 });
-app.use('/upload', uploadRouter);
+
 app.use('/status', statusRouter);
+app.use('/upload', uploadRouter);
 app.use('/webhook', webhookRouter);
 
 const PORT = process.env.PORT || 5000;
